@@ -9,7 +9,7 @@ const MapView = React.forwardRef(({ geometry }, ref) => {
   const mapContainerRef = useRef()
   const mapRef = useRef()
   const key = "kyJTe4pPzUcqqrqrbs7Y"
-  const key2 = "1466e5440ed3e322"
+  const key2 = "50ba4d648cc1f275"
   useEffect(() => {
     console.log("Geometry prop:", geometry)
 
