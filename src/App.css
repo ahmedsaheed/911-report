@@ -17,4 +17,33 @@
   flex: 1;
   height: 100%;
   box-sizing: border-box;
+  padding:  50px;
+}
+
+.call:hover {
+  background-color: #e5e5e5;
+}
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .left {
+    width: 100%;
+    max-width: none;
+    height: auto; /* Adjust height as needed */
+  }
+
+  .right {
+    width: 100%;
+    height: auto;
+  }
+
+  .map-wrap {
+    height: 300px; /* Adjust the height of the map for mobile */
+  }
+
+  .map {
+    height: 100%;
+  }
 }
