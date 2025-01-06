@@ -1,6 +1,6 @@
 {
-  "short_name": "React MapLibre",
-  "name": "MapLibre GL JS map using React JS",
+  "short_name": "London city street crime",
+  "name": "London city street crime",
   "icons": [
     {
       "src": "favicon.ico",

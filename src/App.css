@@ -25,9 +25,18 @@
 }
 @media (max-width: 768px) {
   .main {
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
   }
 
+  h2 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
   .left {
     width: 100%;
     max-width: none;
@@ -37,13 +46,16 @@
   .right {
     width: 100%;
     height: auto;
+    padding: 20px;
   }
 
   .map-wrap {
     height: 300px; /* Adjust the height of the map for mobile */
-  }
+    width: 100vw;  
+}
 
   .map {
     height: 100%;
+    width: 100vw;  
   }
 }

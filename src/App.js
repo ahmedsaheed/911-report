@@ -41,67 +41,68 @@ function App() {
     }
   }
   return (
-    <div className="App">
-      <div className="main">
-        <div className="left">
-          <div id="banner">
-            <a
-              href="https://github.com/ahmedsaheed/911-report"
-              id="name"
-              target="_blank"
-            >
-              Public Data Experiment by Ahmed
-            </a>
-            <h2 id="sf">London City</h2>
-            <h2 id="nine" style={{ color: "#ee352e" }}>
-              Street Level Crime Data
-            </h2>
-            <p id="desc">
-              The United Kingdom Police has made available a dataset of street
-              level crime and This website displays the most recently logged
-              data on a mapview.
+    <>
+      <meta name="viewport" content="width=device-width" />
+      <div className="App">
+        <div className="main">
+          <div className="left">
+            <div id="banner">
+              <a
+                href="https://github.com/ahmedsaheed/911-report"
+                id="name"
+                target="_blank"
+              >
+                Public Data Experiment by Ahmed
+              </a>
+              <h2 id="sf">London City</h2>
+              <h2 id="nine" style={{ color: "#ee352e" }}>
+                Street Level Crime Data
+              </h2>
+              <p id="desc">
+                The United Kingdom Police has made available a dataset of street
+                level crime and this website displays the most recently logged
+                data on a mapview.
+                <br />
+                <br />
+                For privacy reasons, the dataset includes each call's location
+                as the closest intersection. Some calls are marked as sensitive
+                and therefore no location is given.
+              </p>
               <br />
-              <br />
-              For privacy reasons, the dataset includes each call's location as
-              the closest intersection. Some calls are marked as sensitive and
-              therefore no location is given.
-            </p>
-            <br />
-          </div>
+            </div>
 
-          <div id="calls">
-            {loading ? (
-              <div>Loading...</div>
-            ) : (
-              callstream.map((call) => {
-                return (
-                  <div
-                    className="call"
-                    id={call.location.street.id}
-                    onClick={() => handleCallClick(call.location.street.id)}
-                  >
-                    <div className="type" style={{ fontWeight: "bold" }}>
-                      {call.category}
+            <div id="calls">
+              {loading ? (
+                <div>Loading...</div>
+              ) : (
+                callstream.map((call) => {
+                  return (
+                    <div
+                      className="call"
+                      id={call.location.street.id}
+                      onClick={() => handleCallClick(call.location.street.id)}
+                    >
+                      <div style={{ fontWeight: "bold" }}>
+                        {" "}
+                        {call.category}{" "}
+                      </div>
+                      <p className="type" style={{ marginTop: "2px" }}>
+                        reported at {getCalendarDate(call.month)} <br />
+                        {call.location.street.name.toLowerCase()}{" "}
+                      </p>
+                      <hr />
                     </div>
-                    <div className="time">
-                      reported at {getCalendarDate(call.month)}
-                    </div>
-                    <div className="address">
-                      {" "}
-                      {call.location.street.name.toLowerCase()}{" "}
-                    </div>
-                    <hr />
-                  </div>
-                )
-              })
-            )}
+                  )
+                })
+              )}
+            </div>
           </div>
-        </div>
-        <div className="right">
-          {<MapView geometry={coordinates} ref={mapRef} />}
+          <div className="right">
+            {<MapView geometry={coordinates} ref={mapRef} />}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
