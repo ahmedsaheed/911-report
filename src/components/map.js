@@ -3,12 +3,9 @@ import maplibregl from "maplibre-gl"
 import "maplibre-gl/dist/maplibre-gl.css"
 import "./map.css"
 
-// export default function MapView({ geometry }) {
-
 const MapView = React.forwardRef(({ geometry }, ref) => {
   const mapContainerRef = useRef()
   const mapRef = useRef()
-  const key = "kyJTe4pPzUcqqrqrbs7Y"
   const key2 = "50ba4d648cc1f275"
   useEffect(() => {
     console.log("Geometry prop:", geometry)
@@ -16,7 +13,6 @@ const MapView = React.forwardRef(({ geometry }, ref) => {
     const map = new maplibregl.Map({
       container: mapContainerRef.current,
       style: `https://api.protomaps.com/styles/v2/white.json?key=${key2}`,
-      // style: `https://api.maptiler.com/maps/streets/style.json?key=${key}`,
       center: [-0.12755, 51.507222],
       zoom: 13.8,
     })

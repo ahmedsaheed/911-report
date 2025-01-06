@@ -14,7 +14,6 @@ function App() {
     )
       .then((response) => response.json())
       .then((data) => {
-        // now the data is alphabetically sorted, randomize it
         setCallstream(data.sort(() => Math.random() - 0.5))
         setLoading(false)
       })
@@ -46,7 +45,11 @@ function App() {
       <div className="main">
         <div className="left">
           <div id="banner">
-            <a href="#" id="name">
+            <a
+              href="https://github.com/ahmedsaheed/911-report"
+              id="name"
+              target="_blank"
+            >
               Public Data Experiment by Ahmed
             </a>
             <h2 id="sf">London City</h2>
@@ -55,8 +58,8 @@ function App() {
             </h2>
             <p id="desc">
               The United Kingdom Police has made available a dataset of street
-              level crime and This website displays calls from the past 4 hours.
-              Last updated less than a minute ago.
+              level crime and This website displays the most recently logged
+              data on a mapview.
               <br />
               <br />
               For privacy reasons, the dataset includes each call's location as
